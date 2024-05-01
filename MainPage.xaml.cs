@@ -1,25 +1,52 @@
-﻿namespace FlipCoin
+﻿using Microsoft.Maui.Controls;
+
+namespace FlipCoin
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        public MainPage() => InitializeComponent();
+        
 
-        public MainPage()
+        private void CoinPicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InitializeComponent();
+            // Handle when the user selects an item in the Picker.
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            count++;
+            // Simulate flipping a coin
+            Random random = new Random();
+            int randomNumber = random.Next(2); // 0 ou 1
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            // Obter a escolha do usuário
+            string selectedOption = coinPicker.SelectedItem?.ToString();
+
+            if (selectedOption != null)
+            {
+                string result = (randomNumber == 0) ? "Cara" : "Coroa";
+
+                if (selectedOption.Equals("Cara"))
+                {
+                    coinImage.Source = ImageSource.FromResource("cara.jpeg");
+                }
+                else
+                {
+                    coinImage.Source = ImageSource.FromResource("coroa.jpeg");
+                }
+
+                if (selectedOption.Equals(result))
+                {
+                    resultLabel.Text = "Você acertou!";
+                }
+                else
+                {
+                    resultLabel.Text = "Você errou!";
+                }
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                resultLabel.Text = "Por favor, selecione Cara ou Coroa.";
+            }
         }
     }
-
 }
