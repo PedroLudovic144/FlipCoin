@@ -27,11 +27,11 @@ namespace FlipCoin
 
                 if (selectedOption.Equals("Cara"))
                 {
-                    coinImage.Source = ImageSource.FromResource("cara.jpeg");
+                    coinImage.Source = ("cara.jpeg");
                 }
                 else
                 {
-                    coinImage.Source = ImageSource.FromResource("coroa.jpeg");
+                    coinImage.Source = ("coroa.jpeg");
                 }
 
                 if (selectedOption.Equals(result))
@@ -41,6 +41,14 @@ namespace FlipCoin
                 else
                 {
                     resultLabel.Text = "Você errou!";
+                }
+
+                if(result=="Cara"){
+                    coinImage.Source = "cara.jpeg";
+                 }
+                else
+                {
+                    coinImage.Source = "coroa.jpeg";
                 }
             }
             else
