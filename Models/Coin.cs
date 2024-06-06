@@ -9,7 +9,7 @@ namespace FlipCoin.Models
     internal class Coin
     {
         public string Lado { get; set; }
-        public int LadoEscolido { get; set; }
+        public string LadoEscolido { get; set; }
         public Coin()
         {
 

@@ -4,9 +4,20 @@
              x:Class="FlipCoin.Views.CoinView"
              Title="CoinView">
     <VerticalStackLayout>
+        <Image
+            Source="{Binding Imagem}"/>
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            Text="{Binding Resultado}"/>
+        <Picker 
+            Title="Selecione o lado da moeda"/>
+            <Picker.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>cara</x:String>
+                <x:String>coroa</x:String>
+            </x:Array>
+            </Picker.ItemsSource>
+            
+        <Button 
+            Text="Girar moeda"/>
     </VerticalStackLayout>
 </ContentPage>
