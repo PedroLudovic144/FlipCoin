@@ -1,0 +1,1 @@
+D:\2AI\PAM-I\Projetos\CoinFlip\CoinFlip\CoinFlip\CoinFlip.csproj;x64
