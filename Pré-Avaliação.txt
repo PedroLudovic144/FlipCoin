@@ -1,0 +1,31 @@
+Pré-Avaliação:
+
+Escrita:
+Para que serve o MVVM?
+
+O que é o MVVm Community Toolkit?
+
+Para quê serve o arquivo appShell? Como adicionar uma view para ser exibida no lugar da main page?
+
+O que é o Binding? Em que arquivo criamos os bindings?
+
+O que é o Binding context? Escreva como associamos o binding context a classe ViewModel
+
+Para que serve a ViewModel?
+
+O que quer dizer que um atributo é uma propriedade observável? [Observable Propriety]?
+
+
+
+Prática:
+Crie uma classe que modele um usuário de um sistema de login escolar
+
+Desenhe uma interface que possibilita o usuário jogar Jo Ken Po contra o aplicativo
+
+Crie um método que permita que o usuário selecione Pedra, Papel ou Tesoura. Depois,faça um método que sorteie uma das opções parao oponente e as compare.
+
+Se o usuário ganhar, aumente 1 ponto em sua pontuação
+
+Quando ou usuário ou oponente chegar a 10 pontos, mostre na tela "_________ venceu"
+
+O aplicativo deve mostrar uma imagem que represente Pedra,Papel ou Tesoura para cada opção ou seleção feita pelo oponente.
