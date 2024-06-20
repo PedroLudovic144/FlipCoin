@@ -1,10 +1,5 @@
 ﻿using CoinFlip.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace CoinFlip.ViewModels
@@ -20,24 +15,26 @@ namespace CoinFlip.ViewModels
         [ObservableProperty]
         private string escolha;
 
-        public ICommand JogarCommand { get;}
-        
+        public ICommand JogarCommand { get; }
+
         public CoinViewModel()
         {
             JogarCommand = new Command(Jogar);
         }
 
-        public void Jogar()
+        private void Jogar()
         {
             Coin coin = new Coin();
             coin.Jogar();
-            if (Escolha == coin.LadoSorteado) {
-                Resultado = "Você venceu";
+            Imagem = coin.LadoSorteado == "cara" ? "cara_image.png" : "coroa_image.png";
 
+            if (Escolha == coin.LadoSorteado)
+            {
+                Resultado = "Você venceu!";
             }
             else
             {
-                Resultado = "Você perdeu";
+                Resultado = "Você perdeu!";
             }
         }
     }

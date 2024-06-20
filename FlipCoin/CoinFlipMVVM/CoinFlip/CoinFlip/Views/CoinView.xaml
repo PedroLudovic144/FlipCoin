@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CoinFlip.ViewModels"
              x:Class="CoinFlip.Views.CoinView"
              Title="CoinView">
-    <VerticalStackLayout>
-        <Image
-            Source="{Binding Imagem}"/>
-        <Label
-            Text="{Binding Resultado}"/>
-        <Picker
-            Title="Selecione um lado da moeda"
-            SelectedItem="{Binding Escolha}"
-            >
+
+    <ContentPage.BindingContext>
+        <local:CoinViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="30,0" Spacing="25">
+        <Image Source="{Binding Imagem}" HeightRequest="185" Aspect="AspectFit"/>
+        <Label Text="{Binding Resultado}" FontSize="Medium" HorizontalOptions="Center"/>
+        <Picker Title="Selecione um lado da moeda" SelectedItem="{Binding Escolha}">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>cara</x:String>
                     <x:String>coroa</x:String>
                 </x:Array>
-            </Picker.ItemsSource>    
+            </Picker.ItemsSource>
         </Picker>
-            <Button
-            Text="Girar a moeda"
-             Command="{Binding JogarCommand}"
-                />
-        
+        <Button Text="Girar a moeda" Command="{Binding JogarCommand}" HorizontalOptions="Fill"/>
     </VerticalStackLayout>
 </ContentPage>
